@@ -1,5 +1,6 @@
 // ============= GLOBALS =============
 export interface ParamsType{
+    id?: string,
     limit: number,
     search: string,
     pages: number
@@ -27,3 +28,15 @@ export interface AuthRequest {
     sign_up: (data:SignUp)=>Promise<any>
 }
 
+// =============== Category ==================
+
+interface CategoryData {
+    name: string
+}
+
+export interface Category {
+    create: (data: CategoryData)=> Promise<any>
+    read: (params: ParamsType)=> Promise<any>,
+    update: (id: string | number, data: string)=> Promise<any>
+    delete: (id: string | number)=> Promise<any>
+}
