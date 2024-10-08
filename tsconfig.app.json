@@ -10,6 +10,7 @@
       "@pages": ["./src/pages"],
       "@types": ["./src/types"],
       "@service": ["./src/servise"],
+      "@notification": ["./src/utils/notification"],
     },
 
     /* Bundler mode */

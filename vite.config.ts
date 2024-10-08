@@ -6,11 +6,14 @@ export default defineConfig({
   plugins: [react()],
   resolve: {
     alias: [
-      {find: "@", replacement: "/src/*"},
-      {find: "@pages", replacement: "/src/pages"},
+      { find: "@", replacement: "/src/*" },
+      { find: "@pages", replacement: "/src/pages" },
       {find: "@service", replacement: "/src/service"},
-      {find: "@modals", replacement: "/src/components/modals"},
+      {find: "@types", replacement: "/src/types"},
+      {find: "@token-service", replacement: "/src/utils/token-service"},
       {find: "@components", replacement: "/src/components"},
+      {find: "@modals", replacement: "/src/components/modal"},
+      {find: "@notification", replacement: "/src/utils/notification"}
     ]
   }
 })
