@@ -41,3 +41,19 @@ export interface Category {
     update: (id: string | number, data: any) => Promise<any>;
     delete: (id: string | number) => Promise<any>;
 }
+
+// ================ Brand ========================
+
+interface UpdateBrand {
+    name?: any |string,
+    categoryId: number | any,
+    description: any | string
+}
+
+export interface Brand {
+    get: (params: ParamsType)=> any
+    create: (data:CreateData) => Promise<any>;
+    update: (id: string | number, data: UpdateBrand) => Promise<any>;
+    delete: (id: string | number) => Promise<any>;
+    get_by_id: ( id:number,params: ParamsType)=>any
+}

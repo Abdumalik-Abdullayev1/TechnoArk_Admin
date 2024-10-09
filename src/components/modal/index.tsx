@@ -1,3 +1,4 @@
 import Category from './category'
+import Brand from './brand'
 
-export { Category }
+export { Category, Brand }
