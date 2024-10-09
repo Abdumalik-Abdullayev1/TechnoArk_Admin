@@ -3,7 +3,7 @@ export interface ParamsType{
     id?: string,
     limit: number,
     search: string,
-    pages: number
+    page: number
 }
 
 export interface ModalProps{
@@ -30,13 +30,14 @@ export interface AuthRequest {
 
 // =============== Category ==================
 
-interface CategoryData {
-    name: string
+interface CreateData {
+    name: any | string
+    brand_id?: any | number
 }
 
 export interface Category {
-    create: (data: CategoryData)=> Promise<any>
-    read: (params: ParamsType)=> Promise<any>,
-    update: (id: string | number, data: string)=> Promise<any>
-    delete: (id: string | number)=> Promise<any>
+    get: (params: ParamsType)=> any
+    create: (data:CreateData) => Promise<any>;
+    update: (id: string | number, data: any) => Promise<any>;
+    delete: (id: string | number) => Promise<any>;
 }

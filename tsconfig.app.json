@@ -6,10 +6,13 @@
     "module": "ESNext",
     "skipLibCheck": true,
     "paths": {
-      "@": ["./src"],
-      "@pages": ["./src/pages"],
+      "@pages" : ["./src/pages"],
+      "@service": ["./src/service"],
       "@types": ["./src/types"],
-      "@service": ["./src/servise"],
+      "@token-service": ["./src/utils/token-service"],
+      "@components": ["./src/components"],
+      "@modals": ["./src/components/modal"],
+      "@drawers": ["./src/components/drawer"],
       "@notification": ["./src/utils/notification"],
     },
 

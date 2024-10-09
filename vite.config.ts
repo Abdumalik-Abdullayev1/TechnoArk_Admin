@@ -1,3 +1,4 @@
+
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 
@@ -13,6 +14,7 @@ export default defineConfig({
       {find: "@token-service", replacement: "/src/utils/token-service"},
       {find: "@components", replacement: "/src/components"},
       {find: "@modals", replacement: "/src/components/modal"},
+      {find: "@drawers", replacement: "/src/components/drawer"},
       {find: "@notification", replacement: "/src/utils/notification"}
     ]
   }
