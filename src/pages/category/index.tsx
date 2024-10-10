@@ -74,7 +74,7 @@ const Index = () => {
     setOpen(false)
   }
   const moveSingle = (id: number) => {
-    navigate(`/main/categories/${id}`);
+    navigate(`/user-layout/category/${id}`);
   };
 
   const deleteData = async (id: number) => {

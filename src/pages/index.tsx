@@ -1,13 +1,16 @@
-import SignIn from './sign-in'
-import SignUp from './sign-up'
-import UserLayout from './user-layout'
-import Product from './product'
-import Category from './category'
-import Brands from './brands'
-import BrandCategory from './brand-category'
-import Ads from './ads'
-import Stock from './stock'
-import Settings from './settings'
+import { lazy } from 'react';
+
+const SignIn = lazy(() => import('./sign-in'));
+const SignUp = lazy(() => import('./sign-up'));
+const UserLayout = lazy(() => import('./user-layout'));
+const Product = lazy(() => import('./product'));
+const Category = lazy(() => import('./category'));
+const SubCategory = lazy(() => import('./sub-category'));
+const Brands = lazy(() => import('./brands'));
+const BrandCategory = lazy(() => import('./brand-category'));
+const Ads = lazy(() => import('./ads'));
+const Stock = lazy(() => import('./stock'));
+const Settings = lazy(() => import('./settings'));
 
 export {
     SignIn,
@@ -15,6 +18,7 @@ export {
     UserLayout,
     Product,
     Category,
+    SubCategory,
     Brands,
     BrandCategory,
     Ads,

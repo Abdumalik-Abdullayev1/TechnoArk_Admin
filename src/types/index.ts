@@ -42,6 +42,20 @@ export interface Category {
     delete: (id: string | number) => Promise<any>;
 }
 
+// ================= Sub category ====================
+
+interface UpdateSubCategory {
+    name: string,
+    category_id: number,
+}
+
+export interface SubCaregory {
+    get: (params: ParamsType)=> any
+    create: (data: CreateData)=> Promise<any>,
+    update: (id: string | number, data: UpdateSubCategory)=> Promise<any>,
+    delete: (id: string | number)=> Promise<any>
+}
+
 // ================ Brand ========================
 
 interface UpdateBrand {
