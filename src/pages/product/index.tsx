@@ -1,4 +1,4 @@
-import { useLocation, useNavigate} from "react-router-dom";
+import { useLocation, useNavigate} from "react-router-dom"; // To manage query params
 import { useEffect, useState } from "react";
 import { ProductsService } from "@service";
 import { GlobalTable, Search } from "@components";
@@ -11,7 +11,7 @@ import Notification from "../../utils/notificaion";
 const Index = () => {
   const [data, setData] = useState([]);
   const [open,setOpen] = useState(false)
-  const [total, setTotal] = useState(0);
+  const [total, setTotal] = useState(0); // To store the total number of items
   const location = useLocation()
   const navigate = useNavigate()
   const val = new URLSearchParams(location.search)
@@ -28,7 +28,7 @@ const Index = () => {
       const response = await ProductsService.get(params);
       if (response.status === 200) {
         setData(response?.data?.data?.products);
-        setTotal(response?.data?.data?.count); // Assuming the total count is provided by the API
+        setTotal(response?.data?.data?.count);
         
       }
     } catch (err: any) {
@@ -38,9 +38,7 @@ const Index = () => {
   
   useEffect(() => {
     getProducts();
-  }, [params]); // Fetch data whenever params change
-
-  // console.log(data,"products");
+  }, [params]);
   
   useEffect(()=>{
     const params = new URLSearchParams(location.search)
@@ -57,10 +55,8 @@ const Index = () => {
       limit: limitPage
     }))
   },[location.search])
-  // Handle table pagination changes
   const handleTableChange = (pagination: any) => {
     const { current = 1, pageSize = 10 } = pagination;
-    // Update pagination parameters and set them in the URL query params
     setParams((prev) => ({
       ...prev,
       page: current,
@@ -85,7 +81,6 @@ const Index = () => {
     navigate(`/main/products/${id}`);
   };
   const deleteData = async (id: number) => {
-    // setLoading(true);
     try {
       const response = await ProductsService.delete(id);
       getProducts()
@@ -94,8 +89,6 @@ const Index = () => {
           type:"success",
           title: "Product successfully deleted!",
         });
-        // setIsModalVisible(false);
-        // onSuccess();
       }
     } catch (error: any) {
       Notification({
@@ -103,7 +96,6 @@ const Index = () => {
         title: `Failed to delete Product! ${error?.response?.data?.message},Something went wrong`,
       });
     }
-    // setLoading(false);
   };
 
 
@@ -123,8 +115,6 @@ const Index = () => {
       align: "center",
       render: (_text: string, record: any) => (
         <Space size={"middle"}>
-          
-          {/* Adit draewe */}
           <Tooltip title="Edit" >
              <Button
               type="default"
@@ -144,7 +134,6 @@ const Index = () => {
           <Tooltip title="See more about this product">
             <Button
               className="border-[1px]"
-              // type="default"
               icon={<EyeOutlined />}
               onClick={() => moveSingle(record.id)}
               style={{width:"45px", color:"green", borderColor:"green"}}
