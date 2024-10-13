@@ -1,4 +1,4 @@
-import { useLocation, useNavigate} from "react-router-dom"; // To manage query params
+import { useLocation, useNavigate} from "react-router-dom";
 import { useEffect, useState } from "react";
 import { ProductsService } from "@service";
 import { GlobalTable, Search } from "@components";
@@ -11,7 +11,7 @@ import Notification from "../../utils/notificaion";
 const Index = () => {
   const [data, setData] = useState([]);
   const [open,setOpen] = useState(false)
-  const [total, setTotal] = useState(0); // To store the total number of items
+  const [total, setTotal] = useState(0);
   const location = useLocation()
   const navigate = useNavigate()
   const val = new URLSearchParams(location.search)
