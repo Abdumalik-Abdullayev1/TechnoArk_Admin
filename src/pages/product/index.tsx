@@ -5,7 +5,7 @@ import { GlobalTable, Search } from "@components";
 import { Button, Space, Tooltip } from "antd";
 import { EyeOutlined ,EditOutlined} from "@ant-design/icons";
 import { ConfirmDelete } from "@components"
-import { ProductsActions } from "@modals";
+import { ProductsActions } from "@drawers";
 import Notification from "../../utils/notificaion";
 
 const Index = () => {
