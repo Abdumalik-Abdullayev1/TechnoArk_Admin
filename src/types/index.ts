@@ -3,7 +3,7 @@ export interface ParamsType{
     parent_category_id?: string | number,
     brand_id?: string | number,
     limit: number,
-    search: string,
+    search?: string,
     page: number
 }
 
@@ -82,4 +82,23 @@ export interface BrandCategory {
     update: (id: string | number, data: any) => Promise<any>;
     delete: (id: string | number) => Promise<any>;
     get_by_id: ( id:number,params: ParamsType)=>any
+}
+
+// ========== Products ============
+
+interface IProductUpdate {
+    name: string,
+    price: number,
+    category_id: number,
+    brand_category_id: number,
+    brand_id: number
+}
+
+export interface Products {
+    get: (params: ParamsType)=> any
+    create: (data:CreateData) => Promise<any>;
+    update: (id: number | any | string, data: IProductUpdate) => Promise<any>;
+    delete: (id: string | number) => Promise<any>;
+    get_by_id: (id:string | number) => Promise<any>;
+    get_product_by_id: ( id:number,params: ParamsType)=>any
 }
