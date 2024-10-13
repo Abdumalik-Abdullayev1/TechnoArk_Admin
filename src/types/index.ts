@@ -1,6 +1,7 @@
 // ============= GLOBALS =============
 export interface ParamsType{
-    id?: string,
+    parent_category_id?: string | number,
+    brand_id?: string | number,
     limit: number,
     search: string,
     page: number
@@ -32,7 +33,8 @@ export interface AuthRequest {
 
 interface CreateData {
     name: any | string
-    brand_id?: any | number
+    parent_category_id?: string | number
+    brand_id?: string | number
 }
 
 export interface Category {
@@ -46,7 +48,7 @@ export interface Category {
 
 interface UpdateSubCategory {
     name: string,
-    category_id: number,
+    parent_category_id: number,
 }
 
 export interface SubCaregory {
@@ -68,6 +70,16 @@ export interface Brand {
     get: (params: ParamsType)=> any
     create: (data:CreateData) => Promise<any>;
     update: (id: string | number, data: UpdateBrand) => Promise<any>;
+    delete: (id: string | number) => Promise<any>;
+    get_by_id: ( id:number,params: ParamsType)=>any
+}
+
+// ==================== Brand category ==================
+
+export interface BrandCategory {
+    get: (params: ParamsType)=> any
+    create: (data:CreateData) => Promise<any>;
+    update: (id: string | number, data: any) => Promise<any>;
     delete: (id: string | number) => Promise<any>;
     get_by_id: ( id:number,params: ParamsType)=>any
 }
