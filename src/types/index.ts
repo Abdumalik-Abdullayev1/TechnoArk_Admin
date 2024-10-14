@@ -97,7 +97,7 @@ interface IProductUpdate {
 export interface Products {
     get: (params: ParamsType)=> any
     create: (data:CreateData) => Promise<any>;
-    update: (id: number | any | string, data: IProductUpdate) => Promise<any>;
+    update: (id: number | string, data: IProductUpdate) => Promise<any>;
     delete: (id: string | number) => Promise<any>;
     get_by_id: (id:string | number) => Promise<any>;
     get_product_by_id: ( id:number,params: ParamsType)=>any

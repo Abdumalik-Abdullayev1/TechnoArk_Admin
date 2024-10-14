@@ -1,4 +1,3 @@
-import React from 'react';
 import { Flex, Spin } from 'antd';
 
 const contentStyle: React.CSSProperties = {
