@@ -10,7 +10,7 @@ interface SearchProps {
   setParams: (updater: (prevParams: any) => any) => void; // Correct type for setParams
 }
 
-const Index = (props: SearchProps) => {
+const Search = (props: SearchProps) => {
   const { params, setParams } = props;
   const navigate = useNavigate();
   const location = useLocation(); // To get current query parameters
@@ -35,4 +35,4 @@ const Index = (props: SearchProps) => {
   return <Input placeholder="Search" value={params.search} onChange={handleChange} />;
 };
 
-export default Index;
+export default Search;
